@@ -1,5 +1,5 @@
 from apscheduler.schedulers.blocking import BlockingScheduler
-from predictor import SinkholePredictor
+from .predictor import SinkholePredictor
 import json
 import datetime
 import os

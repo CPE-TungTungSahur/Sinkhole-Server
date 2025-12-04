@@ -12,13 +12,19 @@ from tqdm.auto import tqdm
 # 1. SETUP & AUTHENTICATION
 # ==============================================================================
 try:
-    ee.Authenticate()
-    ee.Initialize(project='upheld-shield-330108') # แก้เป็น Project ID ของคุณ
-    print("✅ Earth Engine Initialized.")
+    # Try to initialize with existing credentials (for Docker)
+    ee.Initialize(project='upheld-shield-330108')
+    print("✅ Earth Engine Initialized with existing credentials.")
 except Exception as e:
-    ee.Authenticate()
-    ee.Initialize()
-    print("✅ Earth Engine Authenticated & Initialized.")
+    print(f"⚠️  Failed to initialize with existing credentials: {e}")
+    try:
+        # Fallback to authentication flow (for local development)
+        ee.Authenticate()
+        ee.Initialize(project='upheld-shield-330108')
+        print("✅ Earth Engine Authenticated & Initialized.")
+    except Exception as e2:
+        print(f"❌ Earth Engine initialization failed: {e2}")
+        raise
 
 # ==============================================================================
 # 2. CUSTOM OBJECTS (จำเป็นต้องแปะไว้เพื่อให้ Keras รู้จักตอนโหลดโมเดล)
