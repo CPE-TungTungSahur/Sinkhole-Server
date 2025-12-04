@@ -13,7 +13,7 @@ from tqdm.auto import tqdm
 # ==============================================================================
 try:
     ee.Authenticate()
-    ee.Initialize(project='useful-tempest-477706-j9') # แก้เป็น Project ID ของคุณ
+    ee.Initialize(project='upheld-shield-330108') # แก้เป็น Project ID ของคุณ
     print("✅ Earth Engine Initialized.")
 except Exception as e:
     ee.Authenticate()
@@ -290,8 +290,8 @@ class SinkholePredictor:
 # ==============================================================================
 if __name__ == "__main__":
 
-    MODEL_FILE = '/content/final_sinkhole_model (1).keras'
-    SCALER_FILE = '/content/pretrained_encoder_complete_scaler (4).pkl'
+    MODEL_FILE = '/content/final_sinkhole_model.keras'
+    SCALER_FILE = '/content/pretrained_encoder_complete_scaler.pkl'
 
     CENTER_LAT = 13.780522
     CENTER_LON = 100.509275

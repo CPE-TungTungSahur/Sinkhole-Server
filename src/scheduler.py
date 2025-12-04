@@ -3,10 +3,13 @@ from predictor import SinkholePredictor
 import json
 import datetime
 import os
+from pathlib import Path
 
-MODEL_PATH = "./models/final_sinkhole_model.keras"
-SCALER_PATH = "./models/pretrained_encoder_complete_scaler.pkl"
-DAILY_DIR = "./storage/daily"
+# Get the src directory path
+SRC_DIR = Path(__file__).parent
+MODEL_PATH = str(SRC_DIR / "models" / "final_sinkhole_model.keras")
+SCALER_PATH = str(SRC_DIR / "models" / "pretrained_encoder_complete_scaler.pkl")
+DAILY_DIR = str(SRC_DIR / "storage" / "daily")
 
 # พื้นที่กรุงเทพ
 CENTER_LAT = 13.7563

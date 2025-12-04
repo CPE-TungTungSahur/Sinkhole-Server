@@ -1,20 +1,23 @@
 import os
 import json
 import glob
+from pathlib import Path
 from fastapi import FastAPI
 from pydantic import BaseModel
-from predictor import SinkholePredictor
+from .predictor import SinkholePredictor
 
 app = FastAPI()
 
-MODEL_PATH = "./models/final_sinkhole_model.keras"
-SCALER_PATH = "./models/pretrained_encoder_complete_scaler.pkl"
+# Get absolute paths
+SRC_DIR = Path(__file__).parent
+MODEL_PATH = str(SRC_DIR / "models" / "final_sinkhole_model.keras")
+SCALER_PATH = str(SRC_DIR / "models" / "pretrained_encoder_complete_scaler.pkl")
 
 # โหลดโมเดลตอนบู๊ต
 predictor = SinkholePredictor(MODEL_PATH, SCALER_PATH)
 
 # โฟลเดอร์เก็บสแกน
-DAILY_DIR = "./storage/daily"
+DAILY_DIR = str(SRC_DIR / "storage" / "daily")
 os.makedirs(DAILY_DIR, exist_ok=True)
 
 # -------------------- Request Schema --------------------
