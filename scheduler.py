@@ -8,10 +8,10 @@ MODEL_PATH = "./models/final_sinkhole_model.keras"
 SCALER_PATH = "./models/pretrained_encoder_complete_scaler.pkl"
 DAILY_DIR = "./storage/daily"
 
-# พื้นที่กรุงเทพ
-CENTER_LAT = 13.7563
-CENTER_LON = 100.5018
-RADIUS_KM = 0.5
+# พื้นที่บางมด
+CENTER_LAT = 13.651736
+CENTER_LON = 100.492564
+RADIUS_KM = 0.6
 STEP_KM = 0.05
 
 predictor = SinkholePredictor(MODEL_PATH, SCALER_PATH)
