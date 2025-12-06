@@ -6,48 +6,84 @@ import os
 
 MODEL_PATH = "./models/final_sinkhole_model.keras"
 SCALER_PATH = "./models/pretrained_encoder_complete_scaler.pkl"
+
+POINTS_FILE = "./data/mrt_resampled_1500m.geojson"
 DAILY_DIR = "./storage/daily"
 
-# พื้นที่บางมด
-CENTER_LAT = 13.651736
-CENTER_LON = 100.492564
-RADIUS_KM = 0.6
-STEP_KM = 0.05
+os.makedirs(DAILY_DIR, exist_ok=True)
 
 predictor = SinkholePredictor(MODEL_PATH, SCALER_PATH)
-
 scheduler = BlockingScheduler()
 
+
+def load_points():
+    """โหลดจุด MRT ที่ preprocess แล้ว"""
+    with open(POINTS_FILE, "r", encoding="utf-8") as f:
+        geo = json.load(f)
+
+    points = []
+    for feat in geo["features"]:
+        if feat["geometry"]["type"] != "Point":
+            continue
+        lon, lat = feat["geometry"]["coordinates"]
+        props = feat.get("properties", {})
+        points.append({
+            "lat": lat,
+            "lon": lon,
+            "line": props.get("line"),
+            "color": props.get("color"),
+            "point_type": props.get("type"),
+        })
+
+    return points
+
+
 def run_scan():
-    now_with_hour = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M")
-    now = datetime.datetime.now().strftime("%Y-%m-%d")
-    print(f"[JOB] Running scheduled scan: {now}")
+    date_str = datetime.datetime.now().strftime("%Y-%m-%d")
+    timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M")
 
-    df = predictor.scan_grid(
-        center_lat=CENTER_LAT,
-        center_lon=CENTER_LON,
-        date=now,
-        radius_km=RADIUS_KM,
-        step_km=STEP_KM
-    )
+    print(f"[JOB] MRT risk scan @ {timestamp}")
 
-    if df is None or df.empty:
-        print("⚠ Scan failed, no data.")
+    points = load_points()
+    results = []
+
+    for i, p in enumerate(points):
+        print(f"  → ({i+1}/{len(points)}) {p['lat']}, {p['lon']}")
+
+        prob = predictor.predict(
+            lat=p["lat"],
+            lon=p["lon"],
+            date=date_str
+        )
+
+        if prob is None:
+            continue
+
+        results.append({
+            "lat": p["lat"],
+            "lon": p["lon"],
+            "risk": float(prob),
+            "line": p["line"],
+            "color": p["color"],
+            "point_type": p["point_type"],
+        })
+
+    if not results:
+        print("⚠ No prediction results")
         return
 
-    os.makedirs(DAILY_DIR, exist_ok=True)
+    out_path = f"{DAILY_DIR}/{timestamp}.json"
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump(results, f, ensure_ascii=False)
 
-    file_path = f"{DAILY_DIR}/{now_with_hour}.json"
-    df.to_json(file_path, orient="records")
-    print(f"✅ Saved: {file_path}")
+    print(f"✅ Saved {len(results)} points → {out_path}")
 
 
-# 🔥 ตั้งเวลา 3 รอบต่อวัน
-scheduler.add_job(run_scan, "cron", hour=8, minute=0)    # 8:00
-scheduler.add_job(run_scan, "cron", hour=14, minute=0)   # 14:00
-scheduler.add_job(run_scan, "cron", hour=19, minute=0)   # 20:00
+# 🔥 วันละ 3 รอบ
+scheduler.add_job(run_scan, "cron", hour=8, minute=0)  #8:00 น.
+scheduler.add_job(run_scan, "cron", hour=14, minute=0) #14:00 น.
+scheduler.add_job(run_scan, "cron", hour=19, minute=0) #19:00 น.
 
-# เริ่มงาน
 if __name__ == "__main__":
-    print("📅 Scheduler started...")
+    print("📅 MRT Scheduler started")
     scheduler.start()

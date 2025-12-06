@@ -89,6 +89,9 @@ def scan_to_geojson(points):
             },
             "properties": {
                 "risk": risk,
+                "line": p.get("line"),
+                "color": p.get("color"),
+                "point_type": p.get("point_type"),
             },
         })
 
