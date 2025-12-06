@@ -11,14 +11,25 @@ from tqdm.auto import tqdm
 # ==============================================================================
 # 1. SETUP & AUTHENTICATION
 # ==============================================================================
-try:
-    ee.Authenticate()
-    ee.Initialize(project='useful-tempest-477706-j9') # แก้เป็น Project ID ของคุณ
-    print("✅ Earth Engine Initialized.")
-except Exception as e:
-    ee.Authenticate()
-    ee.Initialize()
-    print("✅ Earth Engine Authenticated & Initialized.")
+# Defer Earth Engine initialization to avoid blocking server startup
+_ee_initialized = False
+
+def initialize_earth_engine():
+    """Initialize Earth Engine with proper error handling."""
+    global _ee_initialized
+    if _ee_initialized:
+        return True
+    
+    try:
+        # Try to initialize with the project ID
+        ee.Initialize(project='upheld-shield-330108')
+        _ee_initialized = True
+        print("✅ Earth Engine Initialized with project.")
+        return True
+    except Exception as e:
+        print(f"⚠️ Earth Engine initialization failed: {e}")
+        print("⚠️ Continuing without Earth Engine. Some features may be unavailable.")
+        return False
 
 # ==============================================================================
 # 2. CUSTOM OBJECTS (จำเป็นต้องแปะไว้เพื่อให้ Keras รู้จักตอนโหลดโมเดล)
@@ -36,6 +47,10 @@ class SimCLRLoss(keras.losses.Loss):
 
 def get_complete_satellite_data(lat, lon, end_date, seq_len=12, buffer=10):
     try:
+        # Initialize Earth Engine if not already done
+        if not initialize_earth_engine():
+            raise Exception("Earth Engine initialization failed. Please authenticate first.")
+        
         evt_dt = pd.to_datetime(end_date)
         start_date = (evt_dt - pd.DateOffset(months=seq_len)).strftime('%Y-%m-%d')
         end_date_str = evt_dt.strftime('%Y-%m-%d')
