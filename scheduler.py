@@ -7,7 +7,7 @@ import os
 MODEL_PATH = "./models/final_sinkhole_model.keras"
 SCALER_PATH = "./models/pretrained_encoder_complete_scaler.pkl"
 
-POINTS_FILE = "./data/mrt_resampled_1500m.geojson"
+POINTS_FILE = "./data/new/mrt_200m.geojson"
 DAILY_DIR = "./storage/daily"
 
 os.makedirs(DAILY_DIR, exist_ok=True)
