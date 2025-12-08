@@ -28,6 +28,7 @@ services:
       - ~/.config/earthengine:/root/.config/earthengine:ro
     environment:
       - PYTHONUNBUFFERED=1
+      - TZ=Asia/Bangkok
     depends_on:
       - api
     restart: unless-stopped
