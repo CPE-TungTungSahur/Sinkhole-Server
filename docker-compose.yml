@@ -15,6 +15,7 @@ services:
       - ~/.config/earthengine:/root/.config/earthengine:ro
     environment:
       - PYTHONUNBUFFERED=1
+      - TZ=Asia/Bangkok
     restart: unless-stopped
 
   # Scheduler service
