@@ -81,10 +81,12 @@ def run_scan():
 
 # 🔥 วันละ 3 รอบ
 # misfire_grace_time=60 allows jobs to run up to 60 seconds late
-scheduler.add_job(run_scan, "cron", hour=8, minute=0, misfire_grace_time=120)  #8:00 น.
-scheduler.add_job(run_scan, "cron", hour=14, minute=0, misfire_grace_time=120) #14:00 น.
-scheduler.add_job(run_scan, "cron", hour=19, minute=0, misfire_grace_time=120) #19:00 น.
-scheduler.add_job(run_scan, "cron", hour=22, minute=27, misfire_grace_time=120) #22:21 น.
+scheduler.add_job(run_scan, "cron", hour=0, minute=0, misfire_grace_time=120)  
+scheduler.add_job(run_scan, "cron", hour=8, minute=0, misfire_grace_time=120) 
+scheduler.add_job(run_scan, "cron", hour=14, minute=0, misfire_grace_time=120) 
+scheduler.add_job(run_scan, "cron", hour=19, minute=0, misfire_grace_time=120)
+scheduler.add_job(run_scan, "cron", hour=21, minute=0, misfire_grace_time=120)
+scheduler.add_job(run_scan, "cron", hour=23, minute=0, misfire_grace_time=120)
 
 if __name__ == "__main__":
     print("📅 MRT Scheduler started")
