@@ -15,7 +15,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Create storage directory
-RUN mkdir -p src/storage/daily
+RUN mkdir -p storage/daily
 
 # Expose port for FastAPI
 EXPOSE 8000
