@@ -1,0 +1,36 @@
+
+services:
+  # FastAPI server
+  api:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: sinkhole-api
+    command: uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./src:/app/src
+      - ./src/storage:/app/src/storage
+      - ~/.config/earthengine:/root/.config/earthengine:ro
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+
+  # Scheduler service
+  scheduler:
+    build: .
+    container_name: sinkhole-scheduler
+    command: python -m src.scheduler
+    volumes:
+      - ./src:/app/src
+      - ./src/storage:/app/src/storage
+      - ~/.config/earthengine:/root/.config/earthengine:ro
+    environment:
+      - PYTHONUNBUFFERED=1
+    depends_on:
+      - api
+    restart: unless-stopped
+
+volumes:
+  storage:
