@@ -7,6 +7,7 @@ import keras
 # import matplotlib.pyplot as plt   # ❌ REMOVED
 import os
 from tqdm.auto import tqdm
+from datetime import datetime
 
 # ==============================================================================
 # 1. SETUP & AUTHENTICATION
@@ -24,11 +25,11 @@ def initialize_earth_engine():
         # Try to initialize with the project ID
         ee.Initialize(project='upheld-shield-330108')
         _ee_initialized = True
-        print("✅ Earth Engine Initialized with project.")
+        print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] ✅ Earth Engine Initialized with project.")
         return True
     except Exception as e:
-        print(f"⚠️ Earth Engine initialization failed: {e}")
-        print("⚠️ Continuing without Earth Engine. Some features may be unavailable.")
+        print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] ⚠️ Earth Engine initialization failed: {e}")
+        print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] ⚠️ Continuing without Earth Engine. Some features may be unavailable.")
         return False
 
 # ==============================================================================
@@ -228,7 +229,7 @@ def get_complete_satellite_data(lat, lon, end_date, seq_len=12, buffer=10):
         return df_final.iloc[-seq_len:]
 
     except Exception as e:
-        print(f"Extraction Error: {e}")
+        print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Extraction Error: {e}")
         return None
 
 # ==============================================================================
@@ -247,7 +248,7 @@ def focal_loss(y_true, y_pred):
 # ==============================================================================
 class SinkholePredictor:
     def __init__(self, model_path, scaler_path):
-        print(f"Loading Model: {model_path}")
+        print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Loading Model: {model_path}")
 
         self.model = keras.models.load_model(
             model_path,
@@ -258,12 +259,12 @@ class SinkholePredictor:
             compile=False
         )
 
-        print(f"Loading Scaler: {scaler_path}")
+        print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Loading Scaler: {scaler_path}")
         self.scaler = joblib.load(scaler_path)
-        print("✅ System Ready.")
+        print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] ✅ System Ready.")
 
     def predict(self, lat, lon, date, seq_len=12):
-        print(f"fetching data for {lat}, {lon}...")
+        print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Fetching data for {lat}, {lon}...")
 
         ts_data = get_complete_satellite_data(lat, lon, date, seq_len=seq_len)
         if ts_data is None:
@@ -276,14 +277,15 @@ class SinkholePredictor:
         try:
             X_scaled = self.scaler.transform(X_input.reshape(-1, n_features)).reshape(X_input.shape)
         except:
-            print("⚠️ Feature mismatch! Training feature set must match extraction function.")
+            print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] ⚠️ Feature mismatch! Training feature set must match extraction function.")
             return None
 
         prob = self.model.predict(X_scaled, verbose=0)[0][0]
+        print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Prediction for {lat}, {lon}: risk={prob:.4f}")
         return prob
 
     def scan_grid(self, center_lat, center_lon, date, radius_km=1.0, step_km=0.1):
-        print(f"Scanning {radius_km}km radius around {center_lat}, {center_lon}")
+        print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Scanning {radius_km}km radius around {center_lat}, {center_lon}")
 
         d_lat = radius_km / 111.0
         d_lon = radius_km / (111.0 * np.cos(np.radians(center_lat)))
@@ -328,7 +330,7 @@ if __name__ == "__main__":
         )
 
         if not df_results.empty:
-            print("\n✅ Scan Complete!")
+            print(f"\n[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] ✅ Scan Complete!")
             print(df_results.head())
 
             # Removed block: Plot & Heatmap with matplotlib
@@ -338,11 +340,11 @@ if __name__ == "__main__":
 
             high_risk = df_results[df_results['risk'] > 0.8]
             if not high_risk.empty:
-                print("\n⚠️ HIGH RISK ZONES FOUND:")
+                print(f"\n[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] ⚠️ HIGH RISK ZONES FOUND:")
                 print(high_risk)
 
         else:
-            print("❌ No data retrieved (Cloud cover or GEE connection issue).")
+            print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] ❌ No data retrieved (Cloud cover or GEE connection issue).")
 
     else:
-        print("❌ Model or Scaler file not found!")
+        print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] ❌ Model or Scaler file not found!")
