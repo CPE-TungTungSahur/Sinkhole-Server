@@ -8,6 +8,10 @@ import keras
 import os
 from tqdm.auto import tqdm
 from datetime import datetime
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 # ==============================================================================
 # 1. SETUP & AUTHENTICATION
@@ -22,10 +26,11 @@ def initialize_earth_engine():
         return True
     
     try:
-        # Try to initialize with the project ID
-        ee.Initialize(project='upheld-shield-330108')
+        # Get project ID from environment variable
+        project_id = os.getenv('GEE_PROJECT_ID', 'upheld-shield-330108')
+        ee.Initialize(project=project_id)
         _ee_initialized = True
-        print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] ✅ Earth Engine Initialized with project.")
+        print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] ✅ Earth Engine Initialized with project: {project_id}")
         return True
     except Exception as e:
         print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] ⚠️ Earth Engine initialization failed: {e}")
