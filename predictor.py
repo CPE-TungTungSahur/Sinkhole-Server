@@ -26,9 +26,11 @@ def initialize_earth_engine():
         return True
     
     try:
+
         # Get project ID from environment variable
         project_id = os.getenv('GEE_PROJECT_ID', 'upheld-shield-330108')
         ee.Initialize(project=project_id)
+
         _ee_initialized = True
         print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] ✅ Earth Engine Initialized with project: {project_id}")
         return True
