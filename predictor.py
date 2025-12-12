@@ -22,7 +22,7 @@ def initialize_earth_engine():
     
     try:
         # Try to initialize with the project ID
-        ee.Initialize(project='upheld-shield-330108')
+        ee.Initialize(project='useful-tempest-477706-j9')
         _ee_initialized = True
         print("✅ Earth Engine Initialized with project.")
         return True

@@ -201,3 +201,46 @@ def point_features(
         "features": df_out[selected].to_dict(orient="records"),
         "columns": selected,
     }
+
+
+# -------------------- Predict 1 point --------------------
+@app.get("/predict-point")
+def predict_point(lat: float, lon: float, date: str):
+    """
+    Predict จุดเดียวแบบ on-demand
+    ใช้ predictor.predict(lat, lon, date)
+    แล้ว return GeoJSON 1 จุด 
+    """
+    try:
+        # เรียกโมเดลของคุณ (ทำงานเหมือน scheduler)
+        prob = predictor.predict(
+            lat=lat,
+            lon=lon,
+            date=date
+        )
+
+        if prob is None:
+            raise HTTPException(status_code=500, detail="Prediction failed (prob is None).")
+
+        # ---- GeoJSON point ----
+        feature = {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [lon, lat],  # GeoJSON format
+            },
+            "properties": {
+                "lat": lat,
+                "lon": lon,
+                "date": date,
+                "risk": float(prob),
+            }
+        }
+
+        return {
+            "status": "ok",
+            "feature": feature
+        }
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
