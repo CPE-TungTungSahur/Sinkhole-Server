@@ -3,8 +3,7 @@ import json
 import glob
 from fastapi import FastAPI
 from pydantic import BaseModel
-from predictor import SinkholePredictor
-from predictor import get_complete_satellite_data
+from predictor_presto import SinkholePredictor
 from fastapi import HTTPException
 import math
 from typing import List
@@ -12,11 +11,8 @@ from datetime import datetime, timedelta
 
 app = FastAPI()
 
-MODEL_PATH = "./models/final_sinkhole_model.keras"
-SCALER_PATH = "./models/pretrained_encoder_complete_scaler.pkl"
-
 # โหลดโมเดลตอนบู๊ต
-predictor = SinkholePredictor(MODEL_PATH, SCALER_PATH)
+predictor = SinkholePredictor()
 
 # โฟลเดอร์เก็บสแกน
 DAILY_DIR = "./storage/daily"
@@ -92,6 +88,7 @@ def scan_to_geojson(points):
                 "line": p.get("line"),
                 "color": p.get("color"),
                 "point_type": p.get("point_type"),
+                "source": "auto",
             },
         })
 
@@ -100,22 +97,29 @@ def scan_to_geojson(points):
         "features": features,
     }
 
+def extract_datetime(fname: str):
+    """
+    2025-12-16_14-59.json → datetime
+    """
+    base = os.path.basename(fname).replace(".json", "")
+    return datetime.strptime(base, "%Y-%m-%d_%H-%M")
+
+
 @app.get("/latest-geojson")
 def latest_geojson():
-    files = sorted(glob.glob(os.path.join(DAILY_DIR, "*.json")))
+    files = glob.glob(os.path.join(DAILY_DIR, "*.json"))
     if not files:
         raise HTTPException(status_code=404, detail="No cached scan found.")
+
+    #  sort จาก timestamp ในชื่อไฟล์
+    files = sorted(files, key=extract_datetime)
 
     latest = files[-1]
 
     with open(latest, "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    # ถ้าไฟล์เป็น {"date": "...", "data": [...]}
-    if isinstance(data, dict) and "data" in data:
-        points = data["data"]
-    else:
-        points = data
+    points = data["data"] if isinstance(data, dict) and "data" in data else data
 
     geojson = scan_to_geojson(points)
 
@@ -171,6 +175,7 @@ def point_history(lat: float, lon: float):
 
     return {"point": {"lat": lat, "lon": lon}, "history": history}
 
+{"""
 # -------------------- Get point satellite features --------------------
 # ดึงข้อมูลดาวเทียมย้อนหลัง สำหรับจุดละติจูด-ลองจิจูด ที่รับมา
 @app.get("/point-features")
@@ -201,46 +206,109 @@ def point_features(
         "features": df_out[selected].to_dict(orient="records"),
         "columns": selected,
     }
-
+"""}
 
 # -------------------- Predict 1 point --------------------
-@app.get("/predict-point")
-def predict_point(lat: float, lon: float, date: str):
+class PredictPointRequest(BaseModel):
+    lat: float
+    lon: float
+    date: str
+
+@app.post("/predict-point")
+def predict_point(req: PredictPointRequest):
     """
-    Predict จุดเดียวแบบ on-demand
-    ใช้ predictor.predict(lat, lon, date)
-    แล้ว return GeoJSON 1 จุด 
+    Predict sinkhole risk for a single point.
+    Returns GeoJSON Feature with risk + satellite features.
     """
-    try:
-        # เรียกโมเดลของคุณ (ทำงานเหมือน scheduler)
-        prob = predictor.predict(
-            lat=lat,
-            lon=lon,
-            date=date
+
+    result = predictor.predict(
+        lat=req.lat,
+        lon=req.lon,
+        date=req.date
+    )
+
+    if "error" in result:
+        raise HTTPException(status_code=404, detail=result["error"])
+
+    # GeoJSON Feature (single point)
+    feature = {
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [req.lon, req.lat],  # GeoJSON = [lon, lat]
+        },
+        "properties": {
+            # ---- core prediction ----
+            "risk": float(result["sinkhole_probability"]),
+            "date": req.date,
+
+            # ---- satellite features for UX ----
+            "features": result["user_features"],
+            "feature_columns": result["user_feature_columns"],
+            "source": "manual",
+        },
+    }
+
+    return {
+        "status": "ok",
+        "feature": feature,
+    }
+
+# -------------------- Get point features from latest scan --------------------
+@app.get("/point-features-from-scan")
+def point_features_from_scan(
+    lat: float,
+    lon: float,
+):
+    """
+    Read precomputed features from the latest scan feature file.
+    """
+
+    # 1. หาไฟล์ features ล่าสุด
+    feature_files = sorted(
+        glob.glob("./storage/features/*_features.json"),
+        key=os.path.getmtime
+    )
+
+    if not feature_files:
+        raise HTTPException(
+            status_code=404,
+            detail="No feature files available"
         )
 
-        if prob is None:
-            raise HTTPException(status_code=500, detail="Prediction failed (prob is None).")
+    latest_feature_file = feature_files[-1]
 
-        # ---- GeoJSON point ----
-        feature = {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [lon, lat],  # GeoJSON format
-            },
-            "properties": {
-                "lat": lat,
-                "lon": lon,
-                "date": date,
-                "risk": float(prob),
-            }
-        }
+    # 2. โหลดข้อมูลทั้งหมด
+    with open(latest_feature_file, "r", encoding="utf-8") as f:
+        data = json.load(f)
 
-        return {
-            "status": "ok",
-            "feature": feature
-        }
+    if not isinstance(data, list):
+        raise HTTPException(
+            status_code=500,
+            detail="Invalid feature file format"
+        )
 
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+    # 3. หา point ที่ใกล้ที่สุด
+    best_point = None
+    best_dist = float("inf")
+
+    for p in data:
+        try:
+            plat = float(p["lat"])
+            plon = float(p["lon"])
+        except (KeyError, ValueError, TypeError):
+            continue
+
+        dist = (plat - lat) ** 2 + (plon - lon) ** 2
+        if dist < best_dist:
+            best_dist = dist
+            best_point = p
+
+    if best_point is None:
+        raise HTTPException(
+            status_code=404,
+            detail="No feature found for this point"
+        )
+
+    return best_point
+

@@ -1,0 +1,1154 @@
+[
+  {
+    "lat": 13.710856,
+    "lon": 100.409493,
+    "risk": 0.6945681698421495,
+    "line": "MRT Blue Line (Tha Phra → Lak Song)",
+    "color": "#1E398D",
+    "point_type": "start_node"
+  },
+  {
+    "lat": 13.711999356517108,
+    "lon": 100.42332849260013,
+    "risk": 0.6900290977310932,
+    "line": "MRT Blue Line (Tha Phra → Lak Song)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.713106254401968,
+    "lon": 100.43716706354576,
+    "risk": 0.6593549228148258,
+    "line": "MRT Blue Line (Tha Phra → Lak Song)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.717145056639168,
+    "lon": 100.45038789146749,
+    "risk": 0.6485747714034424,
+    "line": "MRT Blue Line (Tha Phra → Lak Song)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.72332622645051,
+    "lon": 100.46269519744075,
+    "risk": 0.6514971605876162,
+    "line": "MRT Blue Line (Tha Phra → Lak Song)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.730002143981912,
+    "lon": 100.47474566105564,
+    "risk": 0.7356866539158552,
+    "line": "MRT Blue Line (Tha Phra → Lak Song)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.738299081479663,
+    "lon": 100.48471904026071,
+    "risk": 0.704129422261953,
+    "line": "MRT Blue Line (Tha Phra → Lak Song)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.744252743625614,
+    "lon": 100.49470453323696,
+    "risk": 0.6731202705070383,
+    "line": "MRT Blue Line (Tha Phra → Lak Song)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.745844049083153,
+    "lon": 100.50538021953669,
+    "risk": 0.7176649080285601,
+    "line": "MRT Blue Line (Tha Phra → Lak Song)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.737698620710981,
+    "lon": 100.51639281045532,
+    "risk": 0.6470150151505312,
+    "line": "MRT Blue Line (Tha Phra → Lak Song)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.732443066032328,
+    "lon": 100.52918017937428,
+    "risk": 0.6893718939682965,
+    "line": "MRT Blue Line (Tha Phra → Lak Song)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.72716170248378,
+    "lon": 100.54195558774978,
+    "risk": 0.6047557798926668,
+    "line": "MRT Blue Line (Tha Phra → Lak Song)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.721890485670777,
+    "lon": 100.5547368043844,
+    "risk": 0.6986597441887719,
+    "line": "MRT Blue Line (Tha Phra → Lak Song)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.729342642705623,
+    "lon": 100.56003448271255,
+    "risk": 0.6834618708386179,
+    "line": "MRT Blue Line (Tha Phra → Lak Song)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.74246660135413,
+    "lon": 100.56210045222609,
+    "risk": 0.5944740398543533,
+    "line": "MRT Blue Line (Tha Phra → Lak Song)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.755673437842868,
+    "lon": 100.56490045151183,
+    "risk": 0.6091589860790545,
+    "line": "MRT Blue Line (Tha Phra → Lak Song)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.767411876468863,
+    "lon": 100.57120557148721,
+    "risk": 0.6344403891875549,
+    "line": "MRT Blue Line (Tha Phra → Lak Song)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.780325610396488,
+    "lon": 100.57373841285958,
+    "risk": 0.6512334819349287,
+    "line": "MRT Blue Line (Tha Phra → Lak Song)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.793801601353593,
+    "lon": 100.57436259818377,
+    "risk": 0.7075984198651146,
+    "line": "MRT Blue Line (Tha Phra → Lak Song)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.806499791666198,
+    "lon": 100.57300524126637,
+    "risk": 0.698090897211391,
+    "line": "MRT Blue Line (Tha Phra → Lak Song)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.81326317176551,
+    "lon": 100.560987005314,
+    "risk": 0.6581819733598544,
+    "line": "MRT Blue Line (Tha Phra → Lak Song)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.803941552417701,
+    "lon": 100.55378773727313,
+    "risk": 0.6616383345008958,
+    "line": "MRT Blue Line (Tha Phra → Lak Song)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.800665280265585,
+    "lon": 100.54462338213068,
+    "risk": 0.6899559872162779,
+    "line": "MRT Blue Line (Tha Phra → Lak Song)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.806034424787638,
+    "lon": 100.5319804152719,
+    "risk": 0.7097454244205842,
+    "line": "MRT Blue Line (Tha Phra → Lak Song)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.80601039404267,
+    "lon": 100.51817290912368,
+    "risk": 0.6838847418053982,
+    "line": "MRT Blue Line (Tha Phra → Lak Song)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.797616637261166,
+    "lon": 100.5087275247926,
+    "risk": 0.6391153270961245,
+    "line": "MRT Blue Line (Tha Phra → Lak Song)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.787784282816924,
+    "lon": 100.49949045050765,
+    "risk": 0.7014718490355901,
+    "line": "MRT Blue Line (Tha Phra → Lak Song)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.780410438631234,
+    "lon": 100.48786171394279,
+    "risk": 0.6455270963955367,
+    "line": "MRT Blue Line (Tha Phra → Lak Song)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.770020828173333,
+    "lon": 100.4790441282734,
+    "risk": 0.6768771998603573,
+    "line": "MRT Blue Line (Tha Phra → Lak Song)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.759657116867643,
+    "lon": 100.47015460409372,
+    "risk": 0.7097317521542886,
+    "line": "MRT Blue Line (Tha Phra → Lak Song)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.746477252510541,
+    "lon": 100.47013188172005,
+    "risk": 0.7039054139626515,
+    "line": "MRT Blue Line (Tha Phra → Lak Song)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.733248470933754,
+    "lon": 100.47218900134484,
+    "risk": 0.7007580411646052,
+    "line": "MRT Blue Line (Tha Phra → Lak Song)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.7109118,
+    "lon": 100.4094821,
+    "risk": 0.6891474565520082,
+    "line": "MRT Blue Line (Lak Song → Tha Phra)",
+    "color": "#1E398D",
+    "point_type": "start_node"
+  },
+  {
+    "lat": 13.712048587429102,
+    "lon": 100.42331822847234,
+    "risk": 0.6941401297008026,
+    "line": "MRT Blue Line (Lak Song → Tha Phra)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.713163173507917,
+    "lon": 100.43715630859329,
+    "risk": 0.6606603186596859,
+    "line": "MRT Blue Line (Lak Song → Tha Phra)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.717186028583622,
+    "lon": 100.45038165840404,
+    "risk": 0.6480216770320539,
+    "line": "MRT Blue Line (Lak Song → Tha Phra)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.723367067728615,
+    "lon": 100.46268934519523,
+    "risk": 0.663010442583071,
+    "line": "MRT Blue Line (Lak Song → Tha Phra)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.730053716203551,
+    "lon": 100.47473626338483,
+    "risk": 0.7287764669728205,
+    "line": "MRT Blue Line (Lak Song → Tha Phra)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.738363882962139,
+    "lon": 100.48467732224245,
+    "risk": 0.7186841087556031,
+    "line": "MRT Blue Line (Lak Song → Tha Phra)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.7443454452034,
+    "lon": 100.49455128866984,
+    "risk": 0.6610612245633604,
+    "line": "MRT Blue Line (Lak Song → Tha Phra)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.745991325268982,
+    "lon": 100.50519670878839,
+    "risk": 0.7415068705599727,
+    "line": "MRT Blue Line (Lak Song → Tha Phra)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.73796931799045,
+    "lon": 100.51624961651007,
+    "risk": 0.6398130498947391,
+    "line": "MRT Blue Line (Lak Song → Tha Phra)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.732562436246502,
+    "lon": 100.52896433068717,
+    "risk": 0.7055778743170382,
+    "line": "MRT Blue Line (Lak Song → Tha Phra)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.727301974762291,
+    "lon": 100.54174974362668,
+    "risk": 0.6449193129192347,
+    "line": "MRT Blue Line (Lak Song → Tha Phra)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.722145960156011,
+    "lon": 100.55457891723339,
+    "risk": 0.6857295752635851,
+    "line": "MRT Blue Line (Lak Song → Tha Phra)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.729493535673761,
+    "lon": 100.55976235067413,
+    "risk": 0.6467979064074018,
+    "line": "MRT Blue Line (Lak Song → Tha Phra)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.74257839257051,
+    "lon": 100.56203981242898,
+    "risk": 0.5970156428532589,
+    "line": "MRT Blue Line (Lak Song → Tha Phra)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.755795693469903,
+    "lon": 100.5647764864454,
+    "risk": 0.6486234604134478,
+    "line": "MRT Blue Line (Lak Song → Tha Phra)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.767570647358637,
+    "lon": 100.57104701393132,
+    "risk": 0.6547340770496552,
+    "line": "MRT Blue Line (Lak Song → Tha Phra)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.78047434051392,
+    "lon": 100.57358058428805,
+    "risk": 0.6786275493246741,
+    "line": "MRT Blue Line (Lak Song → Tha Phra)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.793949344735934,
+    "lon": 100.57423144436548,
+    "risk": 0.7038521193189069,
+    "line": "MRT Blue Line (Lak Song → Tha Phra)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.80653404913889,
+    "lon": 100.57269786146546,
+    "risk": 0.7459158236827415,
+    "line": "MRT Blue Line (Lak Song → Tha Phra)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.813263161644265,
+    "lon": 100.5606586513202,
+    "risk": 0.7005775924398315,
+    "line": "MRT Blue Line (Lak Song → Tha Phra)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.803427587401893,
+    "lon": 100.55364565328104,
+    "risk": 0.6920529174156083,
+    "line": "MRT Blue Line (Lak Song → Tha Phra)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.800816777134797,
+    "lon": 100.5443254093376,
+    "risk": 0.6842382943513321,
+    "line": "MRT Blue Line (Lak Song → Tha Phra)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.806034953008238,
+    "lon": 100.5316165956826,
+    "risk": 0.6375583094178637,
+    "line": "MRT Blue Line (Lak Song → Tha Phra)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.80587883957843,
+    "lon": 100.51781551017235,
+    "risk": 0.6890094857498683,
+    "line": "MRT Blue Line (Lak Song → Tha Phra)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.797256389275637,
+    "lon": 100.5085289371773,
+    "risk": 0.700500841480853,
+    "line": "MRT Blue Line (Lak Song → Tha Phra)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.787506778328893,
+    "lon": 100.49920824220145,
+    "risk": 0.7063985880307199,
+    "line": "MRT Blue Line (Lak Song → Tha Phra)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.780105970117033,
+    "lon": 100.48760892622326,
+    "risk": 0.6678428226311572,
+    "line": "MRT Blue Line (Lak Song → Tha Phra)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.769700206406522,
+    "lon": 100.47880806149234,
+    "risk": 0.7265603195087847,
+    "line": "MRT Blue Line (Lak Song → Tha Phra)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.759334231431083,
+    "lon": 100.46992098304048,
+    "risk": 0.712260393387861,
+    "line": "MRT Blue Line (Lak Song → Tha Phra)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.74605647282776,
+    "lon": 100.47020748265633,
+    "risk": 0.7258043674987514,
+    "line": "MRT Blue Line (Lak Song → Tha Phra)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.732875778028413,
+    "lon": 100.47243683271748,
+    "risk": 0.690296983130406,
+    "line": "MRT Blue Line (Lak Song → Tha Phra)",
+    "color": "#1E398D",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.726564,
+    "lon": 100.5434821,
+    "risk": 0.7186388168074404,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "start_node"
+  },
+  {
+    "lat": 13.72137706354414,
+    "lon": 100.5562969738447,
+    "risk": 0.6891896401561289,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.731326915206392,
+    "lon": 100.5596467589069,
+    "risk": 0.6457397292036621,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.744390540059674,
+    "lon": 100.56232386889295,
+    "risk": 0.6188631294773927,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.757593390316684,
+    "lon": 100.56516868680296,
+    "risk": 0.5974975822274179,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.769053856865469,
+    "lon": 100.57216396823573,
+    "risk": 0.7265874058191657,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.782309973300235,
+    "lon": 100.57366849691812,
+    "risk": 0.7053001498002252,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.795784875179795,
+    "lon": 100.57432159793086,
+    "risk": 0.7377333433053406,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.80745255091353,
+    "lon": 100.57105897542549,
+    "risk": 0.7322444427465662,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.81370595177498,
+    "lon": 100.55890706348099,
+    "risk": 0.5901884643703693,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.801835031020746,
+    "lon": 100.55270161095861,
+    "risk": 0.7068102397334913,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.801636394410092,
+    "lon": 100.54263230697362,
+    "risk": 0.6892051736549629,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.8023542,
+    "lon": 100.5410302,
+    "risk": 0.6549342202072296,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "start_node"
+  },
+  {
+    "lat": 13.8037311,
+    "lon": 100.5380173,
+    "risk": 0.6472809308777945,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "start_node"
+  },
+  {
+    "lat": 13.8049316,
+    "lon": 100.5358015,
+    "risk": 0.7344921427158395,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "start_node"
+  },
+  {
+    "lat": 13.80638707881932,
+    "lon": 100.52211555863032,
+    "risk": 0.6789642131243703,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.80070518098905,
+    "lon": 100.51106616262008,
+    "risk": 0.6966552308457602,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.78983669293534,
+    "lon": 100.50285276088746,
+    "risk": 0.6791334260056808,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.782510390737448,
+    "lon": 100.49119299017303,
+    "risk": 0.6773553957918829,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.772825718185688,
+    "lon": 100.48174982983173,
+    "risk": 0.6259258104608733,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.762590552958052,
+    "lon": 100.4727158246769,
+    "risk": 0.7493797253321118,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.750280056903984,
+    "lon": 100.46983030163372,
+    "risk": 0.6696535026706982,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.736840793320805,
+    "lon": 100.4710314952898,
+    "risk": 0.6834290330438426,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.710856,
+    "lon": 100.409493,
+    "risk": 0.6945681698421495,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "start_node"
+  },
+  {
+    "lat": 13.711999356517108,
+    "lon": 100.42332849260013,
+    "risk": 0.6900290977310932,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.713106254401968,
+    "lon": 100.43716706354576,
+    "risk": 0.6593549228148258,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.717145056639168,
+    "lon": 100.45038789146749,
+    "risk": 0.6485747714034424,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.72332622645051,
+    "lon": 100.46269519744075,
+    "risk": 0.6514971605876162,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.7332578,
+    "lon": 100.4787043,
+    "risk": 0.6870894917699131,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "start_node"
+  },
+  {
+    "lat": 13.738461231934544,
+    "lon": 100.49003196233733,
+    "risk": 0.6768645842841766,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.747230769632374,
+    "lon": 100.49714595059298,
+    "risk": 0.698129506530726,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.742548911705983,
+    "lon": 100.50947291390317,
+    "risk": 0.7371837510145959,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.8046338,
+    "lon": 100.536364,
+    "risk": 0.6905371391946922,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "start_node"
+  },
+  {
+    "lat": 13.7318444,
+    "lon": 100.4777683,
+    "risk": 0.6921839198508244,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "start_node"
+  },
+  {
+    "lat": 13.7313001,
+    "lon": 100.4733062,
+    "risk": 0.731245981581736,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "start_node"
+  },
+  {
+    "lat": 13.8049821,
+    "lon": 100.5358293,
+    "risk": 0.7287168856047325,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "start_node"
+  },
+  {
+    "lat": 13.806445600711227,
+    "lon": 100.52213836185776,
+    "risk": 0.678554305197662,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.80079549638707,
+    "lon": 100.51106191514496,
+    "risk": 0.6825397799072023,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.78993114993334,
+    "lon": 100.50284754849157,
+    "risk": 0.6751882518174657,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.782567709172731,
+    "lon": 100.49121196452342,
+    "risk": 0.6811088735586559,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.772902214372053,
+    "lon": 100.48175104090234,
+    "risk": 0.6417019581171785,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.762677483799271,
+    "lon": 100.47270398960733,
+    "risk": 0.7503215281541662,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.75036814339778,
+    "lon": 100.46978207054981,
+    "risk": 0.6775049315842019,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.736929025837577,
+    "lon": 100.47098471668188,
+    "risk": 0.6784617411626508,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.7292965,
+    "lon": 100.4734301,
+    "risk": 0.7154218712446901,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "start_node"
+  },
+  {
+    "lat": 13.7305726,
+    "lon": 100.4736714,
+    "risk": 0.6927529116611374,
+    "line": "MRT Blue Line",
+    "color": "blue",
+    "point_type": "start_node"
+  },
+  {
+    "lat": 13.7305726,
+    "lon": 100.4736714,
+    "risk": 0.6927529116611374,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "start_node"
+  },
+  {
+    "lat": 13.7312446,
+    "lon": 100.4731345,
+    "risk": 0.745082949582869,
+    "line": "MRT Blue Line",
+    "color": "blue",
+    "point_type": "start_node"
+  },
+  {
+    "lat": 13.7305339,
+    "lon": 100.4734972,
+    "risk": 0.6790673658361274,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "start_node"
+  },
+  {
+    "lat": 13.7332814,
+    "lon": 100.478666,
+    "risk": 0.6862945740236686,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "start_node"
+  },
+  {
+    "lat": 13.738537815841442,
+    "lon": 100.48995226459321,
+    "risk": 0.685138388800561,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.747294934584465,
+    "lon": 100.4968986564224,
+    "risk": 0.7172825331525687,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.742727303971467,
+    "lon": 100.5092665901385,
+    "risk": 0.6982733877260308,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.735978909313415,
+    "lon": 100.52110684668524,
+    "risk": 0.6151126064552533,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.730596314294047,
+    "lon": 100.53383760574444,
+    "risk": 0.6140566047333236,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.7109118,
+    "lon": 100.4094821,
+    "risk": 0.6891474565520082,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "start_node"
+  },
+  {
+    "lat": 13.712048587429102,
+    "lon": 100.42331822847234,
+    "risk": 0.6941401297008026,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.713163173507917,
+    "lon": 100.43715630859329,
+    "risk": 0.6606603186596859,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.717186028583622,
+    "lon": 100.45038165840404,
+    "risk": 0.6480216770320539,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.723367067728615,
+    "lon": 100.46268934519523,
+    "risk": 0.663010442583071,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.730053716203551,
+    "lon": 100.47473626338483,
+    "risk": 0.7287764669728205,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.731873,
+    "lon": 100.4777306,
+    "risk": 0.6879244253881311,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "start_node"
+  },
+  {
+    "lat": 13.7265256,
+    "lon": 100.5434702,
+    "risk": 0.6786051795109296,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "start_node"
+  },
+  {
+    "lat": 13.721309891279057,
+    "lon": 100.55627480760302,
+    "risk": 0.6663987649667246,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.730940697654669,
+    "lon": 100.55993167789669,
+    "risk": 0.6231412116589832,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.7440478845361,
+    "lon": 100.56235211718638,
+    "risk": 0.5652341966138332,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.757246687809943,
+    "lon": 100.56521680377794,
+    "risk": 0.6379058869808432,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.768690196861241,
+    "lon": 100.57220135344346,
+    "risk": 0.6974205078082809,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.7819264387049,
+    "lon": 100.57382367729896,
+    "risk": 0.6905560536628641,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.795402598382793,
+    "lon": 100.57444458094791,
+    "risk": 0.7108985759686848,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.807285192262718,
+    "lon": 100.57156631756973,
+    "risk": 0.7154496958342282,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.813933642182938,
+    "lon": 100.55951374195187,
+    "risk": 0.6694390742791752,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.802550481661019,
+    "lon": 100.55296754235611,
+    "risk": 0.7025124275929947,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.801447786647941,
+    "lon": 100.54319167378645,
+    "risk": 0.689909794221292,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.8046832,
+    "lon": 100.5363874,
+    "risk": 0.6969937587911824,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "start_node"
+  },
+  {
+    "lat": 13.8037882,
+    "lon": 100.5380429,
+    "risk": 0.6413348413351342,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "start_node"
+  },
+  {
+    "lat": 13.7374083,
+    "lon": 100.5170471,
+    "risk": 0.6529531316724316,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "start_node"
+  },
+  {
+    "lat": 13.73216255791573,
+    "lon": 100.52983900325161,
+    "risk": 0.6741229516780882,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.726881988063731,
+    "lon": 100.54261475411832,
+    "risk": 0.7025539716106034,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "resampled"
+  },
+  {
+    "lat": 13.7272553,
+    "lon": 100.5418674,
+    "risk": 0.6458594483015601,
+    "line": "MRT Blue Line",
+    "color": "gray",
+    "point_type": "start_node"
+  }
+]
